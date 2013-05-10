@@ -113,10 +113,6 @@ function tool() {
 																		reg_e_contact : {
 																			title : 'Contact',
 																			width : '20%'
-																		},
-																		reg_del_address : {
-																			title : 'Address',
-																			width : '30%'
 																		}
 																	}
 																}, function(data) {//opened handler
@@ -149,12 +145,12 @@ function tool() {
 													},
 													reg_date : {
 														title : 'Registration Date',
-														width : '15%',
+														width : '5%',
 														type : 'date'
 													},
 													reg_name : {
 														title : 'Name',
-														width : '20%'
+														width : '10%'
 													},
 													reg_gender : {
 														title : 'Gender',
@@ -163,15 +159,14 @@ function tool() {
 															'M' : 'Male',
 															'F' : 'Female',
 														}
-
 													},
 													reg_address : {
 														title : 'Address',
-														width : '20%'
+														width : '10%'
 													},
 													reg_email : {
 														title : 'Email',
-														width : '10%'
+														width : '2%'
 													},
 													reg_mobile : {
 														title : 'Mobile',
@@ -184,13 +179,12 @@ function tool() {
 													},
 													reg_affiliation : {
 														title : 'Affiliation',
-														width : '10%'
+														width : '7%'
 													},
 													reg_shirt_size : {
 														title : 'Shirt Size',
-														width : '10%'
+														width : '2%'
 													},
-
 													reg_status : {
 														title : 'Status',
 														type : 'checkbox',
@@ -199,6 +193,14 @@ function tool() {
 															'1' : 'Paid'
 														},
 														defaultValue : 'Unpaid'
+													},
+													reg_del_address : {
+														title : 'Delivery Address',
+														width : '20%'
+													},
+													reg_note : {
+														title : 'Notes',
+														width : '15%'
 													}
 												}
 											}, function(data) {//opened handler

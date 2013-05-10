@@ -36,7 +36,7 @@ try
 	else if($_GET["action"] == "update")
 	{
 		//Update record in database
-		$result = mysql_query("UPDATE registrations SET reg_e_name = '".$_POST["reg_e_name"]."', reg_e_relationship = '".$_POST["reg_e_relationship"]."', reg_e_contact = '".$_POST["reg_e_contact"]."', reg_del_address = '".$_POST["reg_del_address"]."' WHERE reg_id ='".$_POST["reg_id"]."'");
+		$result = mysql_query("UPDATE registrations SET reg_e_name = '".$_POST["reg_e_name"]."', reg_e_relationship = '".$_POST["reg_e_relationship"]."', reg_e_contact = '".$_POST["reg_e_contact"]."' WHERE reg_id ='".$_POST["reg_id"]."'");
 		
 		//Return result to jTable
 		$jTableResult = array();
