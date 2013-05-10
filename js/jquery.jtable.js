@@ -1477,6 +1477,8 @@ THE SOFTWARE.
                 return this._createTextAreaForField(field, fieldName, value);
             } else if (field.type == 'password') {
                 return this._createPasswordInputForField(field, fieldName, value);
+            } else if (field.type == 'file') {
+                return this._createFileUploadForField(field, fieldName, value);
             } else if (field.type == 'checkbox') {
                 return this._createCheckboxForField(field, fieldName, value);
             } else if (field.options) {
@@ -1485,6 +1487,7 @@ THE SOFTWARE.
                 } else {
                     return this._createDropDownListForField(field, fieldName, value, record, formType, form);
                 }
+              
             } else {
                 return this._createTextInputForField(field, fieldName, value);
             }
@@ -1526,6 +1529,20 @@ THE SOFTWARE.
             return $('<div />')
                 .addClass('jtable-input jtable-textarea-input')
                 .append($textArea);
+        },
+        
+        
+         /* Creates a file upload for a field.
+        *************************************************************************/
+        _createFileUploadForField: function (field, fieldName, value) {
+            var $input = $('<input class="' + field.inputClass + '" id="Edit-' + fieldName + '" type="file" name="' + fieldName + '"></input>');
+            if (value != undefined) {
+                $input.val(value);
+            }
+            
+            return $('<div />')
+               //.addClass('jtable-input jtable-text-input')
+                .append($input);
         },
 
         /* Creates a standart textbox for a field.
@@ -1850,7 +1867,8 @@ THE SOFTWARE.
                     } else {
                         record[fieldName] = undefined;
                     }
-                } else {
+               }
+                 else {
                     record[fieldName] = $inputElement.val();
                 }
             }
