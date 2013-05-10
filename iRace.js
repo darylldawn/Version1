@@ -43,6 +43,10 @@ function tool() {
 						$('#RacesContainer').jtable('openChildTable', $img.closest('tr'), //Parent row
 						{
 							title : data.record.race_title + ' - Distances',
+							paging : true,
+							pageSize : 100,
+							sorting : true,
+							defaultSorting : 'dist_id ASC',
 							actions : {
 								listAction : 'scripts/DistanceAction.php?action=list&race_id=' + data.record.race_id,
 								deleteAction : 'scripts/DistanceAction.php?action=delete',
@@ -52,9 +56,7 @@ function tool() {
 							fields : {
 								Registrants : {
 									title : '',
-									width : true,
 									sorting : true,
-									defaultSorting : 'reg_date DESC',
 									edit : true,
 									create : true,
 									display : function(data) {
@@ -65,6 +67,10 @@ function tool() {
 											$('#RacesContainer').jtable('openChildTable', $img.closest('tr'), //Parent row
 											{
 												title : data.record.dist_name + ' - Registrants',
+												paging : true,
+												pageSize : 100,
+												sorting : true,
+												defaultSorting : 'reg_id ASC',
 												actions : {
 													listAction : 'scripts/RegistrationAction.php?action=list&dist_id=' + data.record.dist_id,
 													deleteAction : 'scripts/RegistrationAction.php?action=delete',

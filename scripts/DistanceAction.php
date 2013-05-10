@@ -15,7 +15,7 @@ try
 		$recordCount = $row['RecordCount'];
 
 		//Get records from database
-	    $result = mysql_query("SELECT * FROM distances WHERE race_id =".$_GET["race_id"].";");
+	    $result = mysql_query("SELECT * FROM distances WHERE race_id =".$_GET["race_id"]." ORDER BY " . $_GET["jtSorting"] . " LIMIT " . $_GET["jtStartIndex"] . "," . $_GET["jtPageSize"] . ";");
 		
 		//$result = mysql_query("SELECT * FROM races;");	
 		//Add all records to an array
